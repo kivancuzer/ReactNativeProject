@@ -5,7 +5,7 @@ export default class ProductListPage extends Component {
     render() {
         return (
             <View>
-                <Text>Product List Page</Text>
+                Product List Page
             </View>
         )
     }
