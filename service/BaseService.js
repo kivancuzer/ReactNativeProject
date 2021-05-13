@@ -35,7 +35,7 @@ const baseManager = {
 
     },
 
-    put: async (url, data)=>{
+    put: async (url, data) => {
         let resultData;
         let requestOptions = {
             method: 'PUT',
@@ -55,7 +55,7 @@ const baseManager = {
         return resultdata;
     },
 
-    delete: async (url, id)=>{
+    delete: async (url, id) => {
         let resultData;
         let requestOptions = {
             method: 'DELETE',
@@ -66,7 +66,7 @@ const baseManager = {
             }
         }
 
-        await fetch(config.apiUrl + url +"/"+id, requestOptions)
+        await fetch(config.apiUrl + url + "/" + id, requestOptions)
             .then((res) => res.json())
             .then((data) => {
                 resultData = data;
@@ -77,3 +77,5 @@ const baseManager = {
 
 
 }
+
+export default baseManager;
