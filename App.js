@@ -20,7 +20,7 @@ export default function App() {
               <Route exact path="/add-category" component={AddCategoryPage} />
               <Route exact path="/category-list" component={CategoryListPage} />
               <Route exact path="/order-list" component={OrderListPage} />
-              <Route exact path="/product-details" component={ProductDetailsPage} />
+              <Route exact path="/product-details/:id" component={ProductDetailsPage} />
               <Route exact path="/update-category" component={UpdateCategoryPage} />
               <Redirect to="/product-list" />
             </Switch>

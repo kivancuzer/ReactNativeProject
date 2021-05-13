@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text } from 'react-native'
+import { View, Button } from 'react-native'
 import baseManager from '../service/BaseService';
 import { ListItem, Icon } from 'react-native-elements'
+import { Link } from 'react-router-dom';
 
 export default function CategoryList() {
 
@@ -18,30 +19,36 @@ export default function CategoryList() {
             })
     }
 
-    const deleteCategory = (id) =>{
-        baseManager.delete('api/categories',id)
-        .then((data) =>{
-            fillData();
-        })
+    const deleteCategory = (id) => {
+        baseManager.delete('api/categories', id)
+            .then((data) => {
+                fillData();
+            })
     }
 
     return (
         <View>
-        {
-            categoris.map((category, index) => {
-                return (
-                    <ListItem key={index}>
-                        <ListItem.Content>
-                            <ListItem.Title>{category.name}</ListItem.Title>
-                            <ListItem.Subtitle>{category.description}</ListItem.Subtitle>
+            {
+                categoris.map((category, index) => {
+                    return (
+                        <ListItem key={index}>
+                            <ListItem.Content>
+                                <ListItem.Title>{category.name}</ListItem.Title>
+                                <ListItem.Subtitle>{category.description}</ListItem.Subtitle>
 
-                        </ListItem.Content>
-                        <Icon style={{justifyContent:'flex-end'}}
-                                    name='delete' onPress={() => deleteCategory(category.id)} />
-                    </ListItem>
-                )
-            })
-        }
-    </View>
+                            </ListItem.Content>
+                            <Link style={{textDecoration: 'none'}} to="/update-category">
+                                <Button
+                                    title="Update"
+                                />
+                            </Link>
+
+                            <Icon style={{ justifyContent: 'flex-end' }}
+                                name='delete' onPress={() => deleteCategory(category.id)} />
+                        </ListItem>
+                    )
+                })
+            }
+        </View>
     )
 }
