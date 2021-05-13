@@ -6,8 +6,6 @@ import ProductList from '../components/ProductList'
 
 export default class ProductListPage extends Component {
 
-
-
     render() {
         return (
             <View>
