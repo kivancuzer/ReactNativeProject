@@ -59,20 +59,10 @@ const baseManager = {
         let resultData;
         let requestOptions = {
             method: 'DELETE',
-            body: JSON.stringify(data),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
+            body: JSON.stringify(id),
         }
 
-        await fetch(config.apiUrl + url + "/" + id, requestOptions)
-            .then((res) => res.json())
-            .then((data) => {
-                resultData = data;
-            });
-
-        return resultdata;
+        await fetch(config.apiUrl + url + "/" + id, requestOptions);
     }
 
 

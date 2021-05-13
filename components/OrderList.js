@@ -17,6 +17,13 @@ export default function OrderList() {
             })
     }
 
+    const deleteOrder = (id) =>{
+        baseManager.delete('api/orders',id)
+        .then((data) =>{
+            fillData();
+        })
+    }
+
     return (
         <View>
         {
@@ -28,6 +35,8 @@ export default function OrderList() {
                             <ListItem.Subtitle>{order.shipAddress.city}</ListItem.Subtitle>
 
                         </ListItem.Content>
+                        <Icon style={{justifyContent:'flex-end'}}
+                                    name='delete' onPress={() => deleteOrder(order.id)} />
                     </ListItem>
                 )
             })

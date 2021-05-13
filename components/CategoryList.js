@@ -18,6 +18,13 @@ export default function CategoryList() {
             })
     }
 
+    const deleteCategory = (id) =>{
+        baseManager.delete('api/categories',id)
+        .then((data) =>{
+            fillData();
+        })
+    }
+
     return (
         <View>
         {
@@ -29,6 +36,8 @@ export default function CategoryList() {
                             <ListItem.Subtitle>{category.description}</ListItem.Subtitle>
 
                         </ListItem.Content>
+                        <Icon style={{justifyContent:'flex-end'}}
+                                    name='delete' onPress={() => deleteCategory(category.id)} />
                     </ListItem>
                 )
             })

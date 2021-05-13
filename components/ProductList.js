@@ -18,6 +18,13 @@ export default function ProductList() {
             })
     }
 
+    const deleteProduct = (id) =>{
+        baseManager.delete('api/products',id)
+        .then((data) =>{
+            fillData();
+        })
+    }
+
     return (
         <View>
             {
@@ -29,6 +36,8 @@ export default function ProductList() {
                                 <ListItem.Subtitle>{product.unitPrice}</ListItem.Subtitle>
 
                             </ListItem.Content>
+                            <Icon style={{justifyContent:'flex-end'}}
+                                    name='delete' onPress={() => deleteProduct(product.id)} />
                         </ListItem>
                     )
                 })
