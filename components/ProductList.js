@@ -36,12 +36,12 @@ export default function ProductList() {
                     return (
                                 <ListItem key={index}>
                                     <Card>
-                                    <Link to={`/product-details/${product.id}`} style={{textDecoration: 'none'}}>
+                                    {/*<Link to={`/product-details/${product.id}`} style={{textDecoration: 'none'}}>*/}
                                         <ListItem.Content>
                                             <ListItem.Title>{product.name}</ListItem.Title>
                                             <ListItem.Subtitle>{product.unitPrice}</ListItem.Subtitle>
                                         </ListItem.Content>
-                                    </Link>
+                                    {/*</Link>*/}
                                     <Icon style={{justifyContent: 'flex-end'}}
                                           name='delete' onPress={() => deleteProduct(product.id)}/>
                                     </Card>

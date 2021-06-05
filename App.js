@@ -1,32 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import ProductListPage from './pages/ProductListPage';
-import AddCategoryPage from './pages/AddCategoryPage';
+import AddCategoryPage from './components/AddCategoryPage';
 import CategoryListPage from './pages/CategoryListPage';
 import OrderListPage from './pages/OrderListPage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import UpdateCategoryPage from './pages/UpdateCategoryPage';
 import IndexPage from './pages/IndexPage';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator} from "@react-navigation/stack";
 
 export default function App() {
-  return (
-    <View style={{ display: "flex", flexDirection: "column", minHeight: '100vh' }}>
-      <Router>
-        <Switch>
-          <Route exact path="/product-list" component={ProductListPage} />
-          <Route exact path="/add-category" component={AddCategoryPage} />
-          <Route exact path="/category-list" component={CategoryListPage} />
-          <Route exact path="/order-list" component={OrderListPage} />
-          <Route exact path="/product-details/:id" component={ProductDetailsPage} />
-          <Route exact path="/update-category" component={UpdateCategoryPage} />
-          <Route exact ath="/index" component={IndexPage} />
-          <Redirect to="/" component={IndexPage} />
-        </Switch>
-      </Router>
-    </View>
+
+    const Stack = createStackNavigator();
+
+    return (
+      <NavigationContainer >
+          <Stack.Navigator >
+
+          <Stack.Screen name="Index" component={IndexPage} />
+          <Stack.Screen name="Order List" component={OrderListPage} />
+          <Stack.Screen name="Product List" component={ProductListPage} />
+          <Stack.Screen name="Category List" component={CategoryListPage} />
+          <Stack.Screen name="ProductDetails" component={ProductDetailsPage} />
+          <Stack.Screen name="AddCategory" component={AddCategoryPage} />
+          <Stack.Screen name="UpdateCategory" component={UpdateCategoryPage} />
+
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 

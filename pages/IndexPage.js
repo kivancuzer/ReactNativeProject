@@ -1,32 +1,69 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import {Text, View, TouchableHighlight, Button} from 'react-native'
 
-export default class IndexPage extends Component {
-    render() {
-        return (
-            <View style={{ flex: 5 }}>
-                <View style={{ flex: 1, marginLeft: 50, marginTop: 50 }}>
-                    <Text style={{ fontSize: 70, fontWeight: '300', fontStyle: 'italic' }}>Choose one ..</Text>
-                </View>
-                <View style={{ flex: 4, flexDirection: 'column', margin: 10, justifyContent: ' space-around' }}>
-                    <Link className="nav-link" to="/product-list" style={{ textDecoration: 'none' }}>
-                        <View style={{ flex: 1, backgroundColor: '#F4BC02', justifyContent: 'center', alignItems: 'center', borderRadius: 250, margin: 50, marginHorizontal: 200 }}>
-                            <Text style={{ color: '#F0F0F0', fontSize: 50, fontWeight: '900' }}>Products</Text>
-                        </View>
-                    </Link>
-                    <Link className="nav-link" to="/category-list" style={{ textDecoration: 'none' }}>
-                        <View style={{ flex: 1, backgroundColor: '#ff5338', justifyContent: 'center', alignItems: 'center', borderRadius: 250, margin: 50, marginHorizontal: 200 }}>
-                            <Text style={{ color: '#F0F0F0', fontSize: 50, fontWeight: '900' }}>Categories</Text>
-                        </View>
-                    </Link>
-                    <Link className="nav-link" to="/order-list" style={{ textDecoration: 'none' }}>
-                        <View style={{ flex: 1, backgroundColor: '#4391CE', justifyContent: 'center', alignItems: 'center', borderRadius: 250, margin: 50, marginHorizontal: 200 }}>
-                            <Text style={{ color: '#F0F0F0', fontSize: 50, fontWeight: '900' }}>Orders</Text>
-                        </View>
-                    </Link>
-                </View>
-            </View >
-        )
+export default function IndexPage({navigation}) {
+
+    const goCategory = () => {
+        navigation.push('Category List')
     }
+
+    const goOrder = () => {
+        navigation.push('Order List')
+    }
+
+    const goProduct = () => {
+        navigation.push('Product List')
+    }
+
+    return (
+
+        <View style={{
+            flex: 9,
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'stretch',
+            backgroundColor: '#ccd9eb'
+        }}>
+            <TouchableHighlight onPress={() => goCategory()}>
+                <View style={{
+                    backgroundColor: '#EB7662',
+                    flex: 3,
+                    padding: 20,
+                    borderRadius: 10,
+                    marginTop: 10,
+                    alignItems: 'center'
+                }}>
+                    <Text h3 style={{color: 'white', fontSize: 20}}>Category List</Text>
+                </View>
+            </TouchableHighlight>
+
+            <TouchableHighlight onPress={() => goProduct()}>
+                <View style={{
+                    backgroundColor: 'green',
+                    flex: 3,
+                    marginTop: 10,
+                    borderRadius: 10,
+                    padding: 20,
+                    alignItems: 'center'
+                }}>
+                    <Text h3 style={{color: 'white', fontSize: 20}}>Product List</Text>
+                </View>
+            </TouchableHighlight>
+
+            <TouchableHighlight onPress={() => goOrder()}>
+                <View style={{
+                    backgroundColor: '#FBB563',
+                    flex: 3,
+                    marginTop: 10,
+                    borderRadius: 10,
+                    padding: 20,
+                    alignItems: 'center'
+                }}>
+                    <Text h1 style={{color: 'white', fontSize: 20}}>Order List</Text>
+                </View>
+            </TouchableHighlight>
+
+        </View>
+    );
 }
+

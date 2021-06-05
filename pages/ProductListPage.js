@@ -4,9 +4,9 @@ import { SafeAreaView } from 'react-native'
 import { Text, View } from 'react-native'
 import ProductList from '../components/ProductList'
 
-export default class ProductListPage extends Component {
+export default function ProductListPage ({navigation}) {
 
-    render() {
+
         return (
             <View>
 
@@ -14,5 +14,5 @@ export default class ProductListPage extends Component {
 
             </View>
         )
-    }
+
 }
