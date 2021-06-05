@@ -6,13 +6,53 @@ import ProductList from '../components/ProductList'
 
 export default function ProductListPage ({navigation}) {
 
+    const [products, setproducts] = useState([]);
 
-        return (
-            <View>
+    useEffect(() => {
+        fillData();
+    }, []);
 
-                <ProductList />
+    const fillData = () => {
+        baseManager.get('api/products')
+            .then((data) => {
+                setproducts(data);
+            })
+    }
 
-            </View>
-        )
+    const deleteProduct = (id) => {
+        baseManager.delete('api/products', id)
+            .then((data) => {
+                fillData();
+            })
+    }
+
+    const goDetailPage = (id) => {
+        navigation.navigate('Product Details', { productId: id })
+    }
+
+    return (
+
+        <View >
+            {
+                products.map((product, index) => {
+                    return (
+                        <ListItem key={index}>
+
+                            <ListItem.Content>
+                                <ListItem.Title>{product.name}</ListItem.Title>
+                                <ListItem.Subtitle>{product.unitPrice}</ListItem.Subtitle>
+                            </ListItem.Content>
+
+                            <Icon style={{ justifyContent: 'flex-end' }}
+                                name='update' onPress={() => goDetailPage(product.id)} />
+                            <Icon style={{ justifyContent: 'flex-end' }}
+                                name='delete' onPress={() => deleteProduct(product.id)} />
+                        </ListItem>
+                    )
+                })
+            }
+
+        </View>
+    )
 
 }

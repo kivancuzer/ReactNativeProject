@@ -15,7 +15,6 @@ const baseManager = {
 
     post: async (url, data) => {
 
-        let resultData;
         let requestOptions = {
             method: 'POST',
             body: JSON.stringify(data),
@@ -28,7 +27,6 @@ const baseManager = {
         await fetch(config.apiUrl + url, requestOptions)
             .then((res) => res.json())
             .then((data) => {
-                resultData = data;
             });
 
         return resultdata;
@@ -36,7 +34,6 @@ const baseManager = {
     },
 
     put: async (url, data) => {
-        let resultData;
         let requestOptions = {
             method: 'PUT',
             body: JSON.stringify(data),
@@ -48,15 +45,13 @@ const baseManager = {
 
         await fetch(config.apiUrl + url, requestOptions)
             .then((res) => res.json())
-            .then((data) => {
-                resultData = data;
+            .then((data) => {    
             });
 
         return resultdata;
     },
 
     delete: async (url, id) => {
-        let resultData;
         let requestOptions = {
             method: 'DELETE',
             body: JSON.stringify(id),

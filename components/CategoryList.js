@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import {View, Button} from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View, Button } from 'react-native'
 import baseManager from '../service/BaseService';
-import {ListItem, Icon} from 'react-native-elements'
+import { ListItem, Icon } from 'react-native-elements'
 
 export default function CategoryList() {
 
@@ -36,9 +36,10 @@ export default function CategoryList() {
                                     <ListItem.Title>{category.name}</ListItem.Title>
                                     <ListItem.Subtitle>{category.description}</ListItem.Subtitle>
                                 </ListItem.Content>
+
+                                <Icon style={{ justifyContent: 'flex-end' }}
+                                    name='delete' onPress={() => deleteCategory(category.id)} />
                             </ListItem>
-                            <Icon style={{justifyContent: 'flex-end'}}
-                                  name='delete' onPress={() => deleteCategory(category.id)}/>
                         </View>
                     )
                 })

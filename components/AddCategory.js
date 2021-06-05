@@ -1,10 +1,10 @@
 import React,{useState} from "react"
-import {View, TextInput} from "react-native"
+import {View, TextInput, Button} from "react-native"
 import {Input} from "react-native-elements/dist/input/Input"
 import baseManager from "../service/BaseService";
 import config from "../data/config";
 
-export default function AddCategoryPage() {
+export default function AddCategory() {
 
 const [categoryName, setCategoryName] = useState('');
 const [description, setDescription] = useState('');
