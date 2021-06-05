@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { View } from 'react-native';
+import React, {useState, useEffect} from 'react'
+import {View,} from 'react-native';
 import baseManager from '../service/BaseService';
-import { ListItem, Icon } from 'react-native-elements'
-import { Link } from 'react-router-dom';
+import {ListItem, Icon,Card} from 'react-native-elements'
+import {Link} from 'react-router-dom';
+
 
 export default function ProductList() {
 
@@ -27,25 +28,33 @@ export default function ProductList() {
     }
 
     return (
-        <View>
+
+        <View style={{flex:5, padding:50}}>
+         <Appbar.Header>
+             <Appbar.Content titleStyle={{textAlign: 'center'}} title="Product List" />
+         </Appbar.Header>
+
+            <View style={{flex:4, paddingTop:50}}>
             {
                 products.map((product, index) => {
                     return (
-                        <ListItem key={index}>
-                            <Link to={`/product-details/${product.id}`} style={{textDecoration: 'none'}}>
-                                <ListItem.Content>
-                                    <ListItem.Title>{product.name}</ListItem.Title>
-                                    <ListItem.Subtitle>{product.unitPrice}</ListItem.Subtitle>
-
-                                </ListItem.Content>
-                            </Link>
-
-                            <Icon style={{ justifyContent: 'flex-end' }}
-                                name='delete' onPress={() => deleteProduct(product.id)} />
-                        </ListItem>
+                                <ListItem key={index}>
+                                    <Card>
+                                    <Link to={`/product-details/${product.id}`} style={{textDecoration: 'none'}}>
+                                        <ListItem.Content>
+                                            <ListItem.Title>{product.name}</ListItem.Title>
+                                            <ListItem.Subtitle>{product.unitPrice}</ListItem.Subtitle>
+                                        </ListItem.Content>
+                                    </Link>
+                                    <Icon style={{justifyContent: 'flex-end'}}
+                                          name='delete' onPress={() => deleteProduct(product.id)}/>
+                                    </Card>
+                                </ListItem>
                     )
                 })
             }
+            </View>
+
         </View>
     )
 }

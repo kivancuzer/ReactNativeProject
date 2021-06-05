@@ -5,7 +5,7 @@ export default class UpdateCategoryPage extends Component {
     render() {
         return (
             <View>
-                <Text> Update Category Page </Text>
+                <UpdateCategoryPage/>
             </View>
         )
     }

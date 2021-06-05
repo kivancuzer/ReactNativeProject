@@ -6,6 +6,7 @@ export default class AddCategoryPage extends Component {
     render() {
         return (
             <View>
+                <AddCategoryPage/>
             </View>
         )
     }
