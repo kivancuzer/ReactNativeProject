@@ -24,7 +24,7 @@ export default function App() {
           <Stack.Screen name="Category List" component={CategoryListPage} />
           <Stack.Screen name="Product Details" component={ProductDetailsPage} />
           <Stack.Screen name="Add Category" component={AddCategoryPage} />
-          <Stack.Screen name="UpdateCategory" component={UpdateCategoryPage} />
+          <Stack.Screen name="Update Category" component={UpdateCategoryPage} />
 
         </Stack.Navigator>
       </NavigationContainer>

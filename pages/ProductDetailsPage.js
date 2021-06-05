@@ -12,6 +12,10 @@ export default function ProductDetailsPage({route}) {
     }, []);
 
     const fillData = () => {
+        baseManager.delete('api/categories', 9)
+            .then((data) => {
+                fillData();
+            })
         baseManager.get(`api/products/${productId}`)
             .then((data) => {
                 setproduct(data);

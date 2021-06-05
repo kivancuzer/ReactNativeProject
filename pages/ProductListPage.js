@@ -44,7 +44,7 @@ export default function ProductListPage ({navigation}) {
                             </ListItem.Content>
 
                             <Icon style={{ justifyContent: 'flex-end' }}
-                                name='update' onPress={() => goDetailPage(product.id)} />
+                                name='info' onPress={() => goDetailPage(product.id)} />
                             <Icon style={{ justifyContent: 'flex-end' }}
                                 name='delete' onPress={() => deleteProduct(product.id)} />
                         </ListItem>

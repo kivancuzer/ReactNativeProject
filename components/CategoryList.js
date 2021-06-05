@@ -3,7 +3,7 @@ import { View, Button } from 'react-native'
 import baseManager from '../service/BaseService';
 import { ListItem, Icon } from 'react-native-elements'
 
-export default function CategoryList() {
+export default function CategoryList({navigation}) {
 
     const [categoris, setcategories] = useState([]);
 

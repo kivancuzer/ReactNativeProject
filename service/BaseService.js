@@ -29,8 +29,6 @@ const baseManager = {
             .then((data) => {
             });
 
-        return resultdata;
-
     },
 
     put: async (url, data) => {
@@ -45,10 +43,10 @@ const baseManager = {
 
         await fetch(config.apiUrl + url, requestOptions)
             .then((res) => res.json())
-            .then((data) => {    
+            .then((data) => {
             });
 
-        return resultdata;
+
     },
 
     delete: async (url, id) => {

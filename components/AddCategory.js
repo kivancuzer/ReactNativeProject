@@ -1,24 +1,21 @@
 import React,{useState} from "react"
-import {View, TextInput, Button} from "react-native"
+import {View, Button} from "react-native"
 import {Input} from "react-native-elements/dist/input/Input"
 import baseManager from "../service/BaseService";
-import config from "../data/config";
 
-export default function AddCategory() {
+
+export default function AddCategory({navigation:{goBack}}) {
 
 const [categoryName, setCategoryName] = useState('');
 const [description, setDescription] = useState('');
 
     const addCategory = () => {
-        baseManager.post('api/categories', {name:categoryName,description:description}
+        baseManager.post('api/categories', {name:categoryName,description:description})
             .then((res) => {
                 alert("Category Added!");
                 goBack();
             })
-        )
     }
-
-    // fetch(config.apiUrl+'api/categories', addCategory())
 
     return(
         <View>

@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import baseManager from '../service/BaseService';
 import { ListItem, Icon } from 'react-native-elements'
 
-export default function OrderList() {
+export default function OrderList({navigation}) {
     const [orders, setorders] = useState([]);
 
     useEffect(() => {
@@ -11,6 +11,8 @@ export default function OrderList() {
     }, []);
 
     const fillData = () => {
+
+
         baseManager.get('api/orders')
             .then((data) => {
                 setorders(data);
