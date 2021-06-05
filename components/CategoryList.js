@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { View, Button } from 'react-native'
+import React, {useState, useEffect} from 'react'
+import {View, Button} from 'react-native'
 import baseManager from '../service/BaseService';
-import { ListItem, Icon } from 'react-native-elements'
-import { Link } from 'react-router-dom';
+import {ListItem, Icon} from 'react-native-elements'
 
 export default function CategoryList() {
 
@@ -31,21 +30,16 @@ export default function CategoryList() {
             {
                 categoris.map((category, index) => {
                     return (
-                        <ListItem key={index}>
-                            <ListItem.Content>
-                                <ListItem.Title>{category.name}</ListItem.Title>
-                                <ListItem.Subtitle>{category.description}</ListItem.Subtitle>
-
-                            </ListItem.Content>
-                            <Link style={{textDecoration: 'none'}} to="/update-category">
-                                <Button
-                                    title="Update"
-                                />
-                            </Link>
-
-                            <Icon style={{ justifyContent: 'flex-end' }}
-                                name='delete' onPress={() => deleteCategory(category.id)} />
-                        </ListItem>
+                        <View>
+                            <ListItem key={index}>
+                                <ListItem.Content>
+                                    <ListItem.Title>{category.name}</ListItem.Title>
+                                    <ListItem.Subtitle>{category.description}</ListItem.Subtitle>
+                                </ListItem.Content>
+                            </ListItem>
+                            <Icon style={{justifyContent: 'flex-end'}}
+                                  name='delete' onPress={() => deleteCategory(category.id)}/>
+                        </View>
                     )
                 })
             }
