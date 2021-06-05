@@ -30,10 +30,6 @@ export default function ProductList() {
     return (
 
         <View style={{flex:5, padding:50}}>
-         <Appbar.Header>
-             <Appbar.Content titleStyle={{textAlign: 'center'}} title="Product List" />
-         </Appbar.Header>
-
             <View style={{flex:4, paddingTop:50}}>
             {
                 products.map((product, index) => {
