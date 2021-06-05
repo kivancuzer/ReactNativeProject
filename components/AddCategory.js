@@ -11,9 +11,9 @@ const [description, setDescription] = useState('');
 
     const addCategory = () => {
         baseManager.post('api/categories', {name:categoryName,description:description}
-            .then((res) => res.json())
             .then((res) => {
-                alert("Category Added")
+                alert("Category Added!");
+                goBack();
             })
         )
     }

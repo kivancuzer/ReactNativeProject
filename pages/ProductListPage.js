@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { ScrollView } from 'react-native'
-import { SafeAreaView } from 'react-native'
-import { Text, View } from 'react-native'
-import ProductList from '../components/ProductList'
+import React, { useState, useEffect } from 'react'
+import { View } from 'react-native';
+import baseManager from '../service/BaseService';
+import { ListItem, Icon, Card } from 'react-native-elements'
+
 
 export default function ProductListPage ({navigation}) {
 

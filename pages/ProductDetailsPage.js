@@ -1,6 +1,7 @@
 import React, {Component, useState, useEffect} from 'react'
 import {Text, View} from 'react-native'
 import baseManager from '../service/BaseService';
+import { ListItem, Icon, Card } from 'react-native-elements'
 
 export default function ProductDetailsPage({route}) {
 

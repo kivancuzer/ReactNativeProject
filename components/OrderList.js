@@ -33,7 +33,6 @@ export default function OrderList() {
                         <ListItem.Content>
                             <ListItem.Title>{order.shipName}</ListItem.Title>
                             <ListItem.Subtitle>{order.shipAddress.city}</ListItem.Subtitle>
-
                         </ListItem.Content>
                         <Icon style={{justifyContent:'flex-end'}}
                                     name='delete' onPress={() => deleteOrder(order.id)} />

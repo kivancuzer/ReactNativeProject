@@ -11,7 +11,7 @@ export default function CategoryList() {
         fillData();
     }, []);
 
-    const fillData = () => {
+     const fillData = () => {
         baseManager.get('api/categories')
             .then((data) => {
                 setcategories(data);
