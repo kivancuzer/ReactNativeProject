@@ -5,7 +5,7 @@ import OrderList from '../components/OrderList'
 export default function OrderListPage({navigation}) {
 
     return (
-        <View>
+        <View style={{backgroundColor: '#ccd9eb'}}>
             <OrderList/>
         </View>
     )

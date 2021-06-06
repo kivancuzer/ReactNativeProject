@@ -20,7 +20,7 @@ export default function UpdateCategoryPage({route, navigation:{goBack}}) {
     let { categoryId } = route.params
 
     return(
-        <View>
+        <View syle={{backgroundColor: '#ccd9eb'}}>
             <Input placeholder={categoryName}
                    onChangeText={value => setCategoryName(value) }
             />

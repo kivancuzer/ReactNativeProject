@@ -32,7 +32,7 @@ export default function ProductListPage ({navigation}) {
 
     return (
 
-        <View >
+        <View style={{backgroundColor: '#ccd9eb'}}>
             {
                 products.map((product, index) => {
                     return (
@@ -41,6 +41,7 @@ export default function ProductListPage ({navigation}) {
                             <ListItem.Content>
                                 <ListItem.Title>{product.name}</ListItem.Title>
                                 <ListItem.Subtitle>{product.unitPrice}</ListItem.Subtitle>
+                                <ListItem.Subtitle>{product.quantityPerUnit}</ListItem.Subtitle>
                             </ListItem.Content>
 
                             <Icon style={{ justifyContent: 'flex-end' }}

@@ -16,9 +16,21 @@ export default function App() {
 
     return (
       <NavigationContainer >
-          <Stack.Navigator >
+          <Stack.Navigator
+          screenOptions={{
+              headerStyle: {
+                  backgroundColor: '#ccd9eb'
+              },
+              headerTitleStyle: {
+                  fontWeight: 'bold'
+              },
+              headerTintColor: 'black'
 
-          <Stack.Screen name="Index" component={IndexPage} />
+          }}
+          headerMode='float'
+          >
+
+          <Stack.Screen name="Index" component={IndexPage}/>
           <Stack.Screen name="Order List" component={OrderListPage} />
           <Stack.Screen name="Product List" component={ProductListPage} />
           <Stack.Screen name="Category List" component={CategoryListPage} />

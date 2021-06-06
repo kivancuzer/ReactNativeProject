@@ -12,7 +12,6 @@ export default function OrderList({navigation}) {
 
     const fillData = () => {
 
-
         baseManager.get('api/orders')
             .then((data) => {
                 setorders(data);
@@ -34,6 +33,8 @@ export default function OrderList({navigation}) {
                     <ListItem key={index}>
                         <ListItem.Content>
                             <ListItem.Title>{order.shipName}</ListItem.Title>
+                            <ListItem.Subtitle>{order.customerId}</ListItem.Subtitle>
+                            <ListItem.Subtitle>{order.shipAddress.country}</ListItem.Subtitle>
                             <ListItem.Subtitle>{order.shipAddress.city}</ListItem.Subtitle>
                         </ListItem.Content>
                         <Icon style={{justifyContent:'flex-end'}}

@@ -12,10 +12,7 @@ export default function ProductDetailsPage({route}) {
     }, []);
 
     const fillData = () => {
-        baseManager.delete('api/categories', 9)
-            .then((data) => {
-                fillData();
-            })
+
         baseManager.get(`api/products/${productId}`)
             .then((data) => {
                 setproduct(data);
@@ -25,7 +22,7 @@ export default function ProductDetailsPage({route}) {
     let { productId } = route.params
 
     return (
-        <View>
+        <View stlye={{backgroundColor: '#ccd9eb'}}>
             <ListItem>
                 <ListItem.Content>
                     <ListItem.Title>{product.name}</ListItem.Title>

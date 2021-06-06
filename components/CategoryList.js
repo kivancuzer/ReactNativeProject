@@ -26,7 +26,7 @@ export default function CategoryList({navigation}) {
     }
 
     return (
-        <View>
+        <View style={{backgroundColor: '#ccd9eb'}}>
             {
                 categoris.map((category, index) => {
                     return (
