@@ -10,7 +10,7 @@ export default function UpdateCategoryPage({route, navigation:{goBack}}) {
     const updateCategory = () => {
         baseManager.put(`api/categories/${categoryId}`, {name:categoryName,description:categoryDescription})
             .then((res) => {
-                alert("Category Added!");
+                alert("Category Updated!");
                 goBack();
                 goBack();
             })
@@ -21,11 +21,11 @@ export default function UpdateCategoryPage({route, navigation:{goBack}}) {
 
     return(
         <View syle={{backgroundColor: '#ccd9eb'}}>
-            <Input placeholder={categoryName}
+            <Input value={categoryName}
                    onChangeText={value => setCategoryName(value) }
             />
 
-            <Input placeholder={categoryDescription}
+            <Input value={categoryDescription}
                    onChangeText={value => setCategoryDescription(value)}
             />
 

@@ -27,7 +27,6 @@ export default function App() {
               headerTintColor: 'black'
 
           }}
-          headerMode='float'
           >
 
           <Stack.Screen name="Index" component={IndexPage}/>

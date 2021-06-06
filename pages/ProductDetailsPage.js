@@ -22,7 +22,7 @@ export default function ProductDetailsPage({route}) {
     let { productId } = route.params
 
     return (
-        <View stlye={{backgroundColor: '#ccd9eb'}}>
+        <View style={{backgroundColor: '#ccd9eb'}}>
             <ListItem>
                 <ListItem.Content>
                     <ListItem.Title>{product.name}</ListItem.Title>
