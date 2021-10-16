@@ -21,6 +21,7 @@ export default function AddCategoryPage({navigation: {goBack}}) {
         <View style={{backgroundColor: '#ccd9eb'}}>
             <Input placeholder='Category Name'
                    onChangeText={value => setCategoryName(value)}
+                   deneme yazısı eklendi
             />
 
             <Input placeholder='Description'
